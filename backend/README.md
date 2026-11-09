@@ -6,17 +6,15 @@ Swagger-документация и тесты. Frontend не реализова
 ## Быстрый старт
 
 ```bash
-# 1. MySQL (или свой сервер MySQL 8.0+ / MariaDB 10.5+)
-docker compose up -d
 
-# 2. Python-окружение
+# 1. Python-окружение
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt        # для mysqlclient нужны libmysqlclient-dev / pkg-config
 
-# 3. Настройки
+# 2. Настройки
 cp .env.example .env
 
-# 4. Миграции и админ
+# 3. Миграции и админ
 python manage.py migrate
 python manage.py createsuperuser       # создаст пользователя с ролью admin
 python manage.py runserver
@@ -24,7 +22,7 @@ python manage.py runserver
 #   OpenAPI:     http://localhost:8000/api/schema/
 #   Админка:     http://localhost:8000/admin/
 
-# 5. Тесты ограничений (нужны права на CREATE DATABASE для пользователя БД)
+# 4. Тесты ограничений (нужны права на CREATE DATABASE для пользователя БД)
 python manage.py test
 ```
 
